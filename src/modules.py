@@ -4,16 +4,22 @@ from tensorflow.keras import layers
 
 
 # Image Encoder (get the image embeddings)
+# Bulding the encodr with tensorflow method at first 
+
 class ImageEncoder(tf.keras.Model):
 
-  def __init__(self , embed_size,  dropout_rate = 0.5 ,trainable = False , **kwargs):
-    super(ImageEncoder , self).__init(**kwargs)
+  def __init__(self , embed_size, shape ,   dropout_rate = 0.5 ,trainable = False , **kwargs):
+    super(ImageEncoder , self).__init__(**kwargs)
     
     self.embed_size = embed_size
+    self.shape = shape 
+    self.dropout_rate = dropout_rate 
+    self.trainable = self.trainable
+
     self.resnet = tf.keras.applications.ResNet50(include_top =False)
 
   
-    self.input_layer = layers.Input(shape =shape, name ='image_tensor_input')
+    self.input_layer = layers.Input(shape = self.shape, name ='image_tensor_input')
     self.project_embed_dense = layers.Dense(embed_size)
     self.dropout = layers.Dropout(rate = self.dropout_rate)
     self.add = layers.Add()
@@ -41,8 +47,11 @@ class ImageEncoder(tf.keras.Model):
         # Add the projection embedding and the x 
         x = self.add([project_embeddings , x])
         x = self.layer_norm(x)
-        return x 
+      return x 
   
+
+
+    
 
 
     
