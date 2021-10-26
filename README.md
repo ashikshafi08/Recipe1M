@@ -6,6 +6,8 @@
 
 **This project has been halted for a month or so till I am preparing for my IELTS and university exams. Not letting down this project halfway, will be working once I get done with other stuffs. Remember one at a time.**
 
+**SideNote** : Will be spending 1 or 2 hours (hopefully not sure) on this everyday. But not sure whether to stick with 42 days challenge (might go beyond that). 
+
 Its my first time taking up such a big project, where I have to do almost everything from scratch. Get the dataset, clean it, make it appropriate for my model, train , optimize it and the last part where things get interesting that is deploying this model on production. Last year I promised myself I will work on a Startup idea but it doesn't matter how well it goes, all I wanted to do is try and see how things turn out.
 
 ### Whats the goal?
